@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Costa · Asturias</title>
+<meta name="description" content="Mareas, oleaje, tiempo, avisos y webcams de playas y puertos de Asturias.">
+<meta name="theme-color" content="#0C1822">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Costa">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icono.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icono-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="app.css?v=1">
+</head>
+<body>
+<div class="app">
+  <main id="vista" aria-live="polite">
+    <p class="cargando">Cargando mareas y estado del mar…</p>
+  </main>
+  <nav class="pestanas" aria-label="Secciones">
+    <a href="#/" data-tab="costa">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/><circle cx="16" cy="6" r="3"/></svg>Costa</a>
+    <a href="#/mareas" data-tab="mareas">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12c3-6 6-6 9 0s6 6 9 0M3 20h18"/></svg>Mareas</a>
+    <a href="#/mapa" data-tab="mapa">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 6 6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></svg>Mapa</a>
+    <a href="#/camaras" data-tab="camaras">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="13" height="10" rx="2"/><path d="m16 11 5-3v8l-5-3"/></svg>Cámaras</a>
+  </nav>
+</div>
+
+<aside id="instalar" class="instalar" hidden aria-label="Instalar la app">
+  <img src="icono-192.png" alt="" width="48" height="48">
+  <div class="txt">
+    <strong>Instala Costa</strong>
+    <span class="android">Tenla en la pantalla de inicio, como una app más.</span>
+    <span class="ios">Toca <svg class="compartir" viewBox="0 0 24 24" aria-label="Compartir" role="img"><path d="M12 15V3M8 7l4-4 4 4M6 11H5v10h14V11h-1"/></svg> y luego <b>Añadir a pantalla de inicio</b>.</span>
+    <span class="interno">Ábrela en Safari o Chrome para poder instalarla.</span>
+  </div>
+  <button type="button" class="si android">Instalar</button>
+  <button type="button" class="cerrar-instalar" aria-label="No mostrar más">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js" defer></script>
+<script src="app.js?v=1" defer></script>
+</body>
+</html>

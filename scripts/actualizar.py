@@ -356,6 +356,7 @@ def main():
             "marea": ref, "webcam": l.get("webcam"),
             "mar": m, "tiempo": t,
             "aemet": playas.get(l.get("aemet")) if l.get("aemet") else None,
+            "tieneAemet": bool(l.get("aemet")),
             "avisos": av,
         })
 

@@ -1,0 +1,17 @@
+{
+  "name": "Costa · Asturias",
+  "short_name": "Costa",
+  "description": "Mareas, oleaje, tiempo, avisos y webcams de playas y puertos de Asturias",
+  "lang": "es",
+  "id": "./",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0C1822",
+  "theme_color": "#0C1822",
+  "icons": [
+    { "src": "icono.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "icono-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
