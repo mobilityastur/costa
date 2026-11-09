@@ -295,10 +295,11 @@ function vistaLugar(id) {
     html += `<span class="nota">${l.tieneAemet ? "La predicción de AEMET para esta playa aún no está disponible." : "AEMET no tiene predicción específica para este lugar; los datos de arriba son de Open-Meteo."}</span>`;
   }
   html += `</section>`;
-  html += `<section class="seccion"><h2>Webcam</h2>${l.webcam
-    ? `<div class="webcam"><span class="nota">Cámara pública de un tercero; se abre en su web.</span>
-        <a class="boton" href="${esc(l.webcam.url)}" target="_blank" rel="noopener">Ver webcam en ${esc(l.webcam.fuente)} ${ICO.fuera}</a></div>`
-    : `<div class="webcam"><span class="nota">Todavía no tenemos una webcam pública para este lugar.</span></div>`}</section>`;
+  const cams = l.webcams || [];
+  html += `<section class="seccion"><h2>${cams.length > 1 ? "Webcams" : "Webcam"}</h2><div class="webcam">${cams.length
+    ? `<span class="nota">En directo en la web de ${esc([...new Set(cams.map((c) => c.fuente))].join(" y "))}; se abre aparte.</span>
+       ${cams.map((c) => `<a class="boton ${cams.length > 1 ? "sec" : ""}" href="${esc(c.url)}" target="_blank" rel="noopener" style="justify-content:space-between">${esc(c.nombre)} ${ICO.fuera}</a>`).join("")}`
+    : `<span class="nota">Todavía no tenemos una webcam pública para este lugar.</span>`}</div></section>`;
   html += pie();
   vista.innerHTML = html;
 }
@@ -358,12 +359,12 @@ function vistaMapa() {
 function vistaCamaras() {
   let html = cabecera("Cámaras");
   for (const z of estado.zonas) {
-    const ls = estado.lugares.filter((l) => l.zona === z.id && l.webcam);
+    const ls = estado.lugares.filter((l) => l.zona === z.id && (l.webcams || []).length);
     if (!ls.length) continue;
-    html += `<section class="seccion"><h2>${esc(z.nombre)}</h2>${ls.map((l) => `<a class="boton sec" href="${esc(l.webcam.url)}" target="_blank" rel="noopener" style="justify-content:space-between">
-      <span>${esc(l.nombre)}<br><small style="color:var(--suave);font-weight:400">${esc(l.webcam.fuente)}</small></span>${ICO.fuera}</a>`).join("")}</section>`;
+    html += `<section class="seccion"><h2>${esc(z.nombre)}</h2>${ls.flatMap((l) => l.webcams.map((c) => `<a class="boton sec" href="${esc(c.url)}" target="_blank" rel="noopener" style="justify-content:space-between;text-align:left">
+      <span>${esc(c.nombre)}<br><small style="color:var(--suave);font-weight:400">${esc(l.nombre)} · ${esc(c.fuente)}</small></span>${ICO.fuera}</a>`)).join("")}</section>`;
   }
-  html += `<p class="fuentes">Son webcams públicas de terceros y se abren en su web. Si conoces otra buena para algún sitio, se puede añadir.</p>` + pie();
+  html += `<p class="fuentes">Webcams en directo de <a href="https://www.webcamsdeasturias.com/" target="_blank" rel="noopener">Webcams de Asturias</a> y otras webs: se abren en su página. Si conoces otra buena para algún sitio, se puede añadir.</p>` + pie();
   vista.innerHTML = html;
 }
 

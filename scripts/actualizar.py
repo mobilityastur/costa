@@ -353,7 +353,7 @@ def main():
               if cerca_de(l["lat"], l["lon"], a["poligono"])]
         sal_lugares.append({
             **{k: l[k] for k in ("id", "nombre", "tipo", "municipio", "zona", "lat", "lon")},
-            "marea": ref, "webcam": l.get("webcam"),
+            "marea": ref, "webcams": l.get("webcams") or [],
             "mar": m, "tiempo": t,
             "aemet": playas.get(l.get("aemet")) if l.get("aemet") else None,
             "tieneAemet": bool(l.get("aemet")),

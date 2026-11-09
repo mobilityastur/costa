@@ -1,48 +1,558 @@
 {
-  "_ayuda": "Lugares de la app. 'aemet': código de predicción de playa de AEMET (solo las playas que AEMET cubre). 'marea': id de la estación del Instituto Hidrográfico; si falta, se usa la más cercana. 'webcam': enlace a una webcam pública de un tercero (se abre en su web).",
+  "_ayuda": "Lugares de la app. 'aemet': código de predicción de playa de AEMET (solo las playas que AEMET cubre). 'marea': id de la estación del Instituto Hidrográfico; si falta, se usa la más cercana. 'webcams': enlaces a webcams públicas de terceros (se abren en su web; no se reproducen sus imágenes).",
   "zonas": [
-    {"id": "occidental", "nombre": "Occidental"},
-    {"id": "central", "nombre": "Central"},
-    {"id": "oriental", "nombre": "Oriental"}
+    {
+      "id": "occidental",
+      "nombre": "Occidental"
+    },
+    {
+      "id": "central",
+      "nombre": "Central"
+    },
+    {
+      "id": "oriental",
+      "nombre": "Oriental"
+    }
   ],
   "estacionesMarea": [
-    {"id": "11", "nombre": "Ribadeo", "lat": 43.533333, "lon": -7.036667},
-    {"id": "10", "nombre": "Tapia", "lat": 43.571667, "lon": -6.945},
-    {"id": "9", "nombre": "Navia", "lat": 43.541667, "lon": -6.725},
-    {"id": "8", "nombre": "Cudillero", "lat": 43.566667, "lon": -6.15},
-    {"id": "7", "nombre": "Avilés", "lat": 43.591667, "lon": -5.93},
-    {"id": "6", "nombre": "Gijón", "lat": 43.558333, "lon": -5.698333},
-    {"id": "5", "nombre": "Ribadesella", "lat": 43.461667, "lon": -5.06},
-    {"id": "4", "nombre": "Llanes", "lat": 43.42, "lon": -4.748333}
+    {
+      "id": "11",
+      "nombre": "Ribadeo",
+      "lat": 43.533333,
+      "lon": -7.036667
+    },
+    {
+      "id": "10",
+      "nombre": "Tapia",
+      "lat": 43.571667,
+      "lon": -6.945
+    },
+    {
+      "id": "9",
+      "nombre": "Navia",
+      "lat": 43.541667,
+      "lon": -6.725
+    },
+    {
+      "id": "8",
+      "nombre": "Cudillero",
+      "lat": 43.566667,
+      "lon": -6.15
+    },
+    {
+      "id": "7",
+      "nombre": "Avilés",
+      "lat": 43.591667,
+      "lon": -5.93
+    },
+    {
+      "id": "6",
+      "nombre": "Gijón",
+      "lat": 43.558333,
+      "lon": -5.698333
+    },
+    {
+      "id": "5",
+      "nombre": "Ribadesella",
+      "lat": 43.461667,
+      "lon": -5.06
+    },
+    {
+      "id": "4",
+      "nombre": "Llanes",
+      "lat": 43.42,
+      "lon": -4.748333
+    }
   ],
   "lugares": [
-    {"id": "penarronda", "nombre": "Playa de Peñarronda", "tipo": "playa", "municipio": "Castropol / Tapia", "zona": "occidental", "lat": 43.5562, "lon": -7.0040, "aemet": "3301704"},
-    {"id": "tapia", "nombre": "Puerto de Tapia", "tipo": "puerto", "municipio": "Tapia de Casariego", "zona": "occidental", "lat": 43.5717, "lon": -6.9450, "marea": "10"},
-    {"id": "anguileiro", "nombre": "Playa de Anguileiro / La Grande", "tipo": "playa", "municipio": "Tapia de Casariego", "zona": "occidental", "lat": 43.5690, "lon": -6.9400, "aemet": "3307007", "webcam": {"url": "https://www.surf-forecast.com/breaks/Playade-Tapia/webcams/latest", "fuente": "surf-forecast.com"}},
-    {"id": "navia", "nombre": "Playa de Navia", "tipo": "playa", "municipio": "Navia", "zona": "occidental", "lat": 43.5560, "lon": -6.7240, "aemet": "3304101"},
-    {"id": "otur", "nombre": "Playa de Otur", "tipo": "playa", "municipio": "Valdés", "zona": "occidental", "lat": 43.5546, "lon": -6.5753, "aemet": "3303402"},
-    {"id": "luarca", "nombre": "Puerto de Luarca", "tipo": "puerto", "municipio": "Valdés", "zona": "occidental", "lat": 43.5487, "lon": -6.5341, "aemet": "3303407"},
-    {"id": "cueva", "nombre": "Playa de Cueva", "tipo": "playa", "municipio": "Valdés", "zona": "occidental", "lat": 43.5499, "lon": -6.4728},
-    {"id": "cadavedo", "nombre": "Playa de Cadavedo", "tipo": "playa", "municipio": "Valdés", "zona": "occidental", "lat": 43.5512, "lon": -6.3715, "webcam": {"url": "https://es.surf-forecast.com/breaks/Playade-Cadavedo/webcams/latest", "fuente": "surf-forecast.com"}},
-    {"id": "cudillero", "nombre": "Puerto de Cudillero", "tipo": "puerto", "municipio": "Cudillero", "zona": "occidental", "lat": 43.5667, "lon": -6.1483, "marea": "8"},
-    {"id": "artedo", "nombre": "La Concha de Artedo", "tipo": "playa", "municipio": "Cudillero", "zona": "occidental", "lat": 43.5680, "lon": -6.1880, "aemet": "3302120"},
-
-    {"id": "aguilar", "nombre": "Playa de Aguilar", "tipo": "playa", "municipio": "Muros de Nalón", "zona": "central", "lat": 43.5600, "lon": -6.1100, "aemet": "3303902"},
-    {"id": "la-arena", "nombre": "Playa de La Arena (Los Quebrantos)", "tipo": "playa", "municipio": "Soto del Barco", "zona": "central", "lat": 43.5590, "lon": -6.0850, "aemet": "3306901"},
-    {"id": "salinas", "nombre": "Playa de Salinas", "tipo": "playa", "municipio": "Castrillón", "zona": "central", "lat": 43.5800, "lon": -5.9600, "aemet": "3301608", "webcam": {"url": "https://www.skylinewebcams.com/webcam/espana/asturias/salinas/playa-de-salinas.html", "fuente": "SkylineWebcams"}},
-    {"id": "aviles", "nombre": "Puerto de Avilés", "tipo": "puerto", "municipio": "Avilés", "zona": "central", "lat": 43.5917, "lon": -5.9300, "marea": "7"},
-    {"id": "luanco", "nombre": "Playa de Luanco (Santa Marina)", "tipo": "playa", "municipio": "Gozón", "zona": "central", "lat": 43.6140, "lon": -5.7920, "aemet": "3302509", "webcam": {"url": "https://www.surf-forecast.com/breaks/Playade-Luanco/webcams/latest", "fuente": "surf-forecast.com"}},
-    {"id": "candas", "nombre": "Playa de Candás (La Palmera)", "tipo": "playa", "municipio": "Carreño", "zona": "central", "lat": 43.5900, "lon": -5.7640, "aemet": "3301403"},
-    {"id": "gijon", "nombre": "Puerto de Gijón", "tipo": "puerto", "municipio": "Gijón", "zona": "central", "lat": 43.5455, "lon": -5.6640, "marea": "6", "webcam": {"url": "https://www.enterat.com/servicios/webcams-gijon.php", "fuente": "Webcams de Gijón (enterat.com)"}},
-    {"id": "san-lorenzo", "nombre": "Playa de San Lorenzo", "tipo": "playa", "municipio": "Gijón", "zona": "central", "lat": 43.5440, "lon": -5.6540, "aemet": "3302403", "marea": "6", "webcam": {"url": "https://es.surf-forecast.com/breaks/Playade-San-Lorenzo/webcams/latest", "fuente": "surf-forecast.com"}},
-
-    {"id": "rodiles", "nombre": "Playa de Rodiles", "tipo": "playa", "municipio": "Villaviciosa", "zona": "oriental", "lat": 43.5330, "lon": -5.3780, "aemet": "3307606", "webcam": {"url": "https://www.surf-forecast.com/breaks/Rodiles/webcams/latest", "fuente": "surf-forecast.com"}},
-    {"id": "lastres", "nombre": "Puerto de Lastres", "tipo": "puerto", "municipio": "Colunga", "zona": "oriental", "lat": 43.5120, "lon": -5.2650, "webcam": {"url": "https://www.windfinder.com/webcams/puerto-de-lastres", "fuente": "Windfinder"}},
-    {"id": "vega", "nombre": "Playa de Vega", "tipo": "playa", "municipio": "Ribadesella", "zona": "oriental", "lat": 43.4840, "lon": -5.1350, "aemet": "3305601"},
-    {"id": "santa-marina", "nombre": "Playa de Santa Marina", "tipo": "playa", "municipio": "Ribadesella", "zona": "oriental", "lat": 43.4650, "lon": -5.0710, "aemet": "3305602", "webcam": {"url": "https://www.surf-forecast.com/breaks/Playade-Santa-Marina_Ribadesalla/webcams/latest", "fuente": "surf-forecast.com"}},
-    {"id": "ribadesella", "nombre": "Puerto de Ribadesella", "tipo": "puerto", "municipio": "Ribadesella", "zona": "oriental", "lat": 43.4630, "lon": -5.0600, "marea": "5"},
-    {"id": "llanes", "nombre": "Puerto de Llanes", "tipo": "puerto", "municipio": "Llanes", "zona": "oriental", "lat": 43.4200, "lon": -4.7480, "marea": "4", "webcam": {"url": "https://www.windfinder.com/webcams/llanes", "fuente": "Windfinder"}},
-    {"id": "toro", "nombre": "Playa de Toró", "tipo": "playa", "municipio": "Llanes", "zona": "oriental", "lat": 43.4205, "lon": -4.7420, "aemet": "3303626"},
-    {"id": "la-franca", "nombre": "Playa de La Franca", "tipo": "playa", "municipio": "Ribadedeva", "zona": "oriental", "lat": 43.3920, "lon": -4.5700, "aemet": "3305501"}
+    {
+      "id": "penarronda",
+      "nombre": "Playa de Peñarronda",
+      "tipo": "playa",
+      "municipio": "Castropol / Tapia",
+      "zona": "occidental",
+      "lat": 43.5562,
+      "lon": -7.004,
+      "aemet": "3301704",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oscos-eo/castropol/penarronda/playa-de-penarronda-hd/27/",
+          "nombre": "Playa de Penarronda",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "tapia",
+      "nombre": "Puerto de Tapia",
+      "tipo": "puerto",
+      "municipio": "Tapia de Casariego",
+      "zona": "occidental",
+      "lat": 43.5717,
+      "lon": -6.945,
+      "marea": "10",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oscos-eo/tapia-de-casariego/tapia-de-casariego/puerto-de-tapia-de-casariego-hd/33/",
+          "nombre": "Puerto de Tapia",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oscos-eo/tapia-de-casariego/tapia-de-casariego/puerto-de-tapia-de-casariego-II-hd/36/",
+          "nombre": "Puerto de Tapia II",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "anguileiro",
+      "nombre": "Playa de Anguileiro / La Grande",
+      "tipo": "playa",
+      "municipio": "Tapia de Casariego",
+      "zona": "occidental",
+      "lat": 43.569,
+      "lon": -6.94,
+      "aemet": "3307007",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/occidente/tapia-de-casariego/tapia-de-casariego/playa-de-tapia-anguileiro-o-la-grande-hd/114/",
+          "nombre": "Playa de Anguileiro o La Grande",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/occidente/tapia-de-casariego/tapia/playa-la-grande-hd/140/",
+          "nombre": "Playa de El Murallón",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "navia",
+      "nombre": "Playa de Navia",
+      "tipo": "playa",
+      "municipio": "Navia",
+      "zona": "occidental",
+      "lat": 43.556,
+      "lon": -6.724,
+      "aemet": "3304101",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/parque-historico-del-navia/navia/navia/playa-de-navia-hd/67/",
+          "nombre": "Playa de Navia",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/parque-historico-del-navia/navia/navia/darsena-de-navia-hd/69/",
+          "nombre": "Dársena de Navia",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "otur",
+      "nombre": "Playa de Otur",
+      "tipo": "playa",
+      "municipio": "Valdés",
+      "zona": "occidental",
+      "lat": 43.5546,
+      "lon": -6.5753,
+      "aemet": "3303402"
+    },
+    {
+      "id": "luarca",
+      "nombre": "Puerto de Luarca",
+      "tipo": "puerto",
+      "municipio": "Valdés",
+      "zona": "occidental",
+      "lat": 43.5487,
+      "lon": -6.5341,
+      "aemet": "3303407",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-vaqueira/valdes/luarca/panoramica-puerto-luarca-hd/193/",
+          "nombre": "Panorámica de Luarca",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/occidente/valdes/luarca/acantilados-de-luarca-valdes-hd/115/",
+          "nombre": "Acantilados de Luarca",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "cueva",
+      "nombre": "Playa de Cueva",
+      "tipo": "playa",
+      "municipio": "Valdés",
+      "zona": "occidental",
+      "lat": 43.5499,
+      "lon": -6.4728
+    },
+    {
+      "id": "cadavedo",
+      "nombre": "Playa de Cadavedo",
+      "tipo": "playa",
+      "municipio": "Valdés",
+      "zona": "occidental",
+      "lat": 43.5512,
+      "lon": -6.3715,
+      "webcams": [
+        {
+          "url": "https://es.surf-forecast.com/breaks/Playade-Cadavedo/webcams/latest",
+          "nombre": "Webcams cercanas",
+          "fuente": "surf-forecast.com"
+        }
+      ]
+    },
+    {
+      "id": "cudillero",
+      "nombre": "Puerto de Cudillero",
+      "tipo": "puerto",
+      "municipio": "Cudillero",
+      "zona": "occidental",
+      "lat": 43.5667,
+      "lon": -6.1483,
+      "marea": "8",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-vaqueira/cudillero/cudillero/plaza-de-la-marina-ayuntamiento/97/",
+          "nombre": "Cudillero desde el Ayuntamiento",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "artedo",
+      "nombre": "La Concha de Artedo",
+      "tipo": "playa",
+      "municipio": "Cudillero",
+      "zona": "occidental",
+      "lat": 43.568,
+      "lon": -6.188,
+      "aemet": "3302120",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-vaqueira/cudillero/lamuno/playa-de-la-concha-de-artedo/151/",
+          "nombre": "Playa de la Concha de Artedo",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "aguilar",
+      "nombre": "Playa de Aguilar",
+      "tipo": "playa",
+      "municipio": "Muros de Nalón",
+      "zona": "central",
+      "lat": 43.56,
+      "lon": -6.11,
+      "aemet": "3303902",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/bajo-nalon/muros-de-nalon/aguilar/playas-de-campofrio-aguilar-hd/122/",
+          "nombre": "Playa de Aguilar",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/bajo-nalon/muros-de-nalon/aguilar/playa-de-aguilar-ii-hd/205/",
+          "nombre": "Playa de Aguilar II",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "la-arena",
+      "nombre": "Playa de La Arena (Los Quebrantos)",
+      "tipo": "playa",
+      "municipio": "Soto del Barco",
+      "zona": "central",
+      "lat": 43.559,
+      "lon": -6.085,
+      "aemet": "3306901",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/bajo-nalon/soto-del-barco/san-juan-del-arena/playa-de-los-quebrantos-hd/149/",
+          "nombre": "Playa de Los Quebrantos",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/bajo-nalon/soto-del-barco/san-juan-del-arena/muelle-de-san-juan-de-la-arena-hd/38/",
+          "nombre": "Muelle de San Juan de la Arena",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "salinas",
+      "nombre": "Playa de Salinas",
+      "tipo": "playa",
+      "municipio": "Castrillón",
+      "zona": "central",
+      "lat": 43.58,
+      "lon": -5.96,
+      "aemet": "3301608",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-de-aviles/castrillon/salinas/playa-de-salinas-hd/26/",
+          "nombre": "Playa de Salinas",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "aviles",
+      "nombre": "Puerto de Avilés",
+      "tipo": "puerto",
+      "municipio": "Avilés",
+      "zona": "central",
+      "lat": 43.5917,
+      "lon": -5.93,
+      "marea": "7"
+    },
+    {
+      "id": "luanco",
+      "nombre": "Playa de Luanco (Santa Marina)",
+      "tipo": "playa",
+      "municipio": "Gozón",
+      "zona": "central",
+      "lat": 43.614,
+      "lon": -5.792,
+      "aemet": "3302509",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/cabo-penas/gozon/luanco/playa-de-la-ribera-hd/24/",
+          "nombre": "Luanco · Playa de La Ribera",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/cabo-penas/gozon/luanco/muelle-de-luanco-hd/91/",
+          "nombre": "Muelle de Luanco",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "candas",
+      "nombre": "Playa de Candás (La Palmera)",
+      "tipo": "playa",
+      "municipio": "Carreño",
+      "zona": "central",
+      "lat": 43.59,
+      "lon": -5.764,
+      "aemet": "3301403",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/cabo-penas/carreno/candas/paseo-maritimo-de-candas/23/",
+          "nombre": "Paseo Marítimo de Candás y Perlora",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "gijon",
+      "nombre": "Puerto de Gijón",
+      "tipo": "puerto",
+      "municipio": "Gijón",
+      "zona": "central",
+      "lat": 43.5455,
+      "lon": -5.664,
+      "marea": "6",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/centro/gijon/gijon/puerto-deportivo-poniente-hd/41/",
+          "nombre": "Puerto Deportivo de Gijón",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/centro/gijon/gijon/fomento-poniente/87/",
+          "nombre": "Playa de Poniente · Fomento",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "san-lorenzo",
+      "nombre": "Playa de San Lorenzo",
+      "tipo": "playa",
+      "municipio": "Gijón",
+      "zona": "central",
+      "lat": 43.544,
+      "lon": -5.654,
+      "aemet": "3302403",
+      "marea": "6",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/centro/gijon/gijon/la-escalerona-playa-de-san-lorenzo-hd/148/",
+          "nombre": "San Lorenzo · La Escalerona",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/gijon/gijon/san-lorenzo/panoramica-playa-hd/198/",
+          "nombre": "San Lorenzo · La Cantábrica",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/centro/gijon/gijon/playa-de-san-lorenzo-el-tostaderu-hd/133/",
+          "nombre": "San Lorenzo · El Tostaderu",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "rodiles",
+      "nombre": "Playa de Rodiles",
+      "tipo": "playa",
+      "municipio": "Villaviciosa",
+      "zona": "oriental",
+      "lat": 43.533,
+      "lon": -5.378,
+      "aemet": "3307606",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-de-la-sidra/villaviciosa/rodiles/surf-barra-de-playa-de-rodiles-hd/44/",
+          "nombre": "Playa de Rodiles I",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-de-la-sidra/villaviciosa/rodiles/playa-de-rodiles-hd/120/",
+          "nombre": "Rodiles III · Barra",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "lastres",
+      "nombre": "Puerto de Lastres",
+      "tipo": "puerto",
+      "municipio": "Colunga",
+      "zona": "oriental",
+      "lat": 43.512,
+      "lon": -5.265,
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-de-la-sidra/colunga/lastres/puerto-de-lastres-hd/49/",
+          "nombre": "Puerto de Lastres",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-de-la-sidra/colunga/llastres/puerto-muelle-de-lastres-hd/1/",
+          "nombre": "Muelle de Lastres",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "vega",
+      "nombre": "Playa de Vega",
+      "tipo": "playa",
+      "municipio": "Ribadesella",
+      "zona": "oriental",
+      "lat": 43.484,
+      "lon": -5.135,
+      "aemet": "3305601",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oriente/ribadesella/vega/playa-de-vega-hd/132/",
+          "nombre": "Playa de Vega",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "santa-marina",
+      "nombre": "Playa de Santa Marina",
+      "tipo": "playa",
+      "municipio": "Ribadesella",
+      "zona": "oriental",
+      "lat": 43.465,
+      "lon": -5.071,
+      "aemet": "3305602",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oriente/ribadesella/ribadesella/playa-de-santa-marina-hd/166/",
+          "nombre": "Playa de Santa Marina II",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oriente/ribadesella/ribadesella/la-guia-playa-de-santa-marina-hd/25/",
+          "nombre": "Playa de Santa Marina I",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "ribadesella",
+      "nombre": "Puerto de Ribadesella",
+      "tipo": "puerto",
+      "municipio": "Ribadesella",
+      "zona": "oriental",
+      "lat": 43.463,
+      "lon": -5.06,
+      "marea": "5",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oriente/ribadesella/ribadesella/barra-de-ribadesella-hd/125/",
+          "nombre": "Barra de Ribadesella",
+          "fuente": "Webcams de Asturias"
+        },
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oriente/ribadesella/ribadesella/paseo-princesa-letizia-hd/32/",
+          "nombre": "Paseo Princesa Letizia",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "llanes",
+      "nombre": "Puerto de Llanes",
+      "tipo": "puerto",
+      "municipio": "Llanes",
+      "zona": "oriental",
+      "lat": 43.42,
+      "lon": -4.748,
+      "marea": "4",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oriente/llanes/llanes/puerto-de-llanes-hd/39/",
+          "nombre": "Puerto de Llanes",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "toro",
+      "nombre": "Playa de Toró",
+      "tipo": "playa",
+      "municipio": "Llanes",
+      "zona": "oriental",
+      "lat": 43.4205,
+      "lon": -4.742,
+      "aemet": "3303626",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oriente/llanes/llanes/playa-de-toro-mirador-de-toro-hd/53/",
+          "nombre": "Playa de Toró · Mirador",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
+      "id": "la-franca",
+      "nombre": "Playa de La Franca",
+      "tipo": "playa",
+      "municipio": "Ribadedeva",
+      "zona": "oriental",
+      "lat": 43.392,
+      "lon": -4.57,
+      "aemet": "3305501",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/oriente-de-asturias/ribadedeva/ribadedeva/playa-de-la-franca-hd/117/",
+          "nombre": "Playa de La Franca",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    }
   ]
 }
