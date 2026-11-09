@@ -199,9 +199,9 @@
       "lon": -6.3715,
       "webcams": [
         {
-          "url": "https://es.surf-forecast.com/breaks/Playade-Cadavedo/webcams/latest",
-          "nombre": "Webcams cercanas",
-          "fuente": "surf-forecast.com"
+          "url": "https://www.hispacams.com/webcams/playa-de-cadavedo/",
+          "nombre": "Playa de Cadavedo",
+          "fuente": "Hispacams"
         }
       ]
     },
