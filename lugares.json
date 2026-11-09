@@ -1,0 +1,48 @@
+{
+  "_ayuda": "Lugares de la app. 'aemet': código de predicción de playa de AEMET (solo las playas que AEMET cubre). 'marea': id de la estación del Instituto Hidrográfico; si falta, se usa la más cercana. 'webcam': enlace a una webcam pública de un tercero (se abre en su web).",
+  "zonas": [
+    {"id": "occidental", "nombre": "Occidental"},
+    {"id": "central", "nombre": "Central"},
+    {"id": "oriental", "nombre": "Oriental"}
+  ],
+  "estacionesMarea": [
+    {"id": "11", "nombre": "Ribadeo", "lat": 43.533333, "lon": -7.036667},
+    {"id": "10", "nombre": "Tapia", "lat": 43.571667, "lon": -6.945},
+    {"id": "9", "nombre": "Navia", "lat": 43.541667, "lon": -6.725},
+    {"id": "8", "nombre": "Cudillero", "lat": 43.566667, "lon": -6.15},
+    {"id": "7", "nombre": "Avilés", "lat": 43.591667, "lon": -5.93},
+    {"id": "6", "nombre": "Gijón", "lat": 43.558333, "lon": -5.698333},
+    {"id": "5", "nombre": "Ribadesella", "lat": 43.461667, "lon": -5.06},
+    {"id": "4", "nombre": "Llanes", "lat": 43.42, "lon": -4.748333}
+  ],
+  "lugares": [
+    {"id": "penarronda", "nombre": "Playa de Peñarronda", "tipo": "playa", "municipio": "Castropol / Tapia", "zona": "occidental", "lat": 43.5562, "lon": -7.0040, "aemet": "3301704"},
+    {"id": "tapia", "nombre": "Puerto de Tapia", "tipo": "puerto", "municipio": "Tapia de Casariego", "zona": "occidental", "lat": 43.5717, "lon": -6.9450, "marea": "10"},
+    {"id": "anguileiro", "nombre": "Playa de Anguileiro / La Grande", "tipo": "playa", "municipio": "Tapia de Casariego", "zona": "occidental", "lat": 43.5690, "lon": -6.9400, "aemet": "3307007", "webcam": {"url": "https://www.surf-forecast.com/breaks/Playade-Tapia/webcams/latest", "fuente": "surf-forecast.com"}},
+    {"id": "navia", "nombre": "Playa de Navia", "tipo": "playa", "municipio": "Navia", "zona": "occidental", "lat": 43.5560, "lon": -6.7240, "aemet": "3304101"},
+    {"id": "otur", "nombre": "Playa de Otur", "tipo": "playa", "municipio": "Valdés", "zona": "occidental", "lat": 43.5546, "lon": -6.5753, "aemet": "3303402"},
+    {"id": "luarca", "nombre": "Puerto de Luarca", "tipo": "puerto", "municipio": "Valdés", "zona": "occidental", "lat": 43.5487, "lon": -6.5341, "aemet": "3303407"},
+    {"id": "cueva", "nombre": "Playa de Cueva", "tipo": "playa", "municipio": "Valdés", "zona": "occidental", "lat": 43.5499, "lon": -6.4728},
+    {"id": "cadavedo", "nombre": "Playa de Cadavedo", "tipo": "playa", "municipio": "Valdés", "zona": "occidental", "lat": 43.5512, "lon": -6.3715, "webcam": {"url": "https://es.surf-forecast.com/breaks/Playade-Cadavedo/webcams/latest", "fuente": "surf-forecast.com"}},
+    {"id": "cudillero", "nombre": "Puerto de Cudillero", "tipo": "puerto", "municipio": "Cudillero", "zona": "occidental", "lat": 43.5667, "lon": -6.1483, "marea": "8"},
+    {"id": "artedo", "nombre": "La Concha de Artedo", "tipo": "playa", "municipio": "Cudillero", "zona": "occidental", "lat": 43.5680, "lon": -6.1880, "aemet": "3302120"},
+
+    {"id": "aguilar", "nombre": "Playa de Aguilar", "tipo": "playa", "municipio": "Muros de Nalón", "zona": "central", "lat": 43.5600, "lon": -6.1100, "aemet": "3303902"},
+    {"id": "la-arena", "nombre": "Playa de La Arena (Los Quebrantos)", "tipo": "playa", "municipio": "Soto del Barco", "zona": "central", "lat": 43.5590, "lon": -6.0850, "aemet": "3306901"},
+    {"id": "salinas", "nombre": "Playa de Salinas", "tipo": "playa", "municipio": "Castrillón", "zona": "central", "lat": 43.5800, "lon": -5.9600, "aemet": "3301608", "webcam": {"url": "https://www.skylinewebcams.com/webcam/espana/asturias/salinas/playa-de-salinas.html", "fuente": "SkylineWebcams"}},
+    {"id": "aviles", "nombre": "Puerto de Avilés", "tipo": "puerto", "municipio": "Avilés", "zona": "central", "lat": 43.5917, "lon": -5.9300, "marea": "7"},
+    {"id": "luanco", "nombre": "Playa de Luanco (Santa Marina)", "tipo": "playa", "municipio": "Gozón", "zona": "central", "lat": 43.6140, "lon": -5.7920, "aemet": "3302509", "webcam": {"url": "https://www.surf-forecast.com/breaks/Playade-Luanco/webcams/latest", "fuente": "surf-forecast.com"}},
+    {"id": "candas", "nombre": "Playa de Candás (La Palmera)", "tipo": "playa", "municipio": "Carreño", "zona": "central", "lat": 43.5900, "lon": -5.7640, "aemet": "3301403"},
+    {"id": "gijon", "nombre": "Puerto de Gijón", "tipo": "puerto", "municipio": "Gijón", "zona": "central", "lat": 43.5455, "lon": -5.6640, "marea": "6", "webcam": {"url": "https://www.enterat.com/servicios/webcams-gijon.php", "fuente": "Webcams de Gijón (enterat.com)"}},
+    {"id": "san-lorenzo", "nombre": "Playa de San Lorenzo", "tipo": "playa", "municipio": "Gijón", "zona": "central", "lat": 43.5440, "lon": -5.6540, "aemet": "3302403", "marea": "6", "webcam": {"url": "https://es.surf-forecast.com/breaks/Playade-San-Lorenzo/webcams/latest", "fuente": "surf-forecast.com"}},
+
+    {"id": "rodiles", "nombre": "Playa de Rodiles", "tipo": "playa", "municipio": "Villaviciosa", "zona": "oriental", "lat": 43.5330, "lon": -5.3780, "aemet": "3307606", "webcam": {"url": "https://www.surf-forecast.com/breaks/Rodiles/webcams/latest", "fuente": "surf-forecast.com"}},
+    {"id": "lastres", "nombre": "Puerto de Lastres", "tipo": "puerto", "municipio": "Colunga", "zona": "oriental", "lat": 43.5120, "lon": -5.2650, "webcam": {"url": "https://www.windfinder.com/webcams/puerto-de-lastres", "fuente": "Windfinder"}},
+    {"id": "vega", "nombre": "Playa de Vega", "tipo": "playa", "municipio": "Ribadesella", "zona": "oriental", "lat": 43.4840, "lon": -5.1350, "aemet": "3305601"},
+    {"id": "santa-marina", "nombre": "Playa de Santa Marina", "tipo": "playa", "municipio": "Ribadesella", "zona": "oriental", "lat": 43.4650, "lon": -5.0710, "aemet": "3305602", "webcam": {"url": "https://www.surf-forecast.com/breaks/Playade-Santa-Marina_Ribadesalla/webcams/latest", "fuente": "surf-forecast.com"}},
+    {"id": "ribadesella", "nombre": "Puerto de Ribadesella", "tipo": "puerto", "municipio": "Ribadesella", "zona": "oriental", "lat": 43.4630, "lon": -5.0600, "marea": "5"},
+    {"id": "llanes", "nombre": "Puerto de Llanes", "tipo": "puerto", "municipio": "Llanes", "zona": "oriental", "lat": 43.4200, "lon": -4.7480, "marea": "4", "webcam": {"url": "https://www.windfinder.com/webcams/llanes", "fuente": "Windfinder"}},
+    {"id": "toro", "nombre": "Playa de Toró", "tipo": "playa", "municipio": "Llanes", "zona": "oriental", "lat": 43.4205, "lon": -4.7420, "aemet": "3303626"},
+    {"id": "la-franca", "nombre": "Playa de La Franca", "tipo": "playa", "municipio": "Ribadedeva", "zona": "oriental", "lat": 43.3920, "lon": -4.5700, "aemet": "3305501"}
+  ]
+}
