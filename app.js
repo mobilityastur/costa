@@ -285,7 +285,8 @@ function vistaLugar(id) {
   if (ae?.dias?.length) {
     html += `<div class="tabla">${ae.dias.map((d) => {
       const fuerte = /moderad|fuerte/i.test(d.oleaje || "") ? "n1" : "";
-      const cielo = [d.cielo, d.cieloTarde && d.cieloTarde !== d.cielo ? `tarde ${d.cieloTarde.toLowerCase()}` : ""].filter(Boolean).join(", ");
+      const cieloTxt = [d.cielo, d.cieloTarde && d.cieloTarde !== d.cielo ? `tarde ${d.cieloTarde.toLowerCase()}` : ""].filter(Boolean).join(", ");
+      const cielo = cieloTxt.charAt(0).toUpperCase() + cieloTxt.slice(1);
       return `<div class="fila"><strong>${esc(nombreDia(new Date(`${d.fecha}T12:00:00`)))}</strong>
         <span>${esc(cielo)} · viento ${esc((d.viento || "").toLowerCase())}${d.tMax ? ` · ${esc(d.tMax)} °C` : ""}${d.tAgua ? ` · agua ${esc(d.tAgua)} °C` : ""}</span>
         <span class="der ${fuerte}">Oleaje ${esc((d.oleaje || "–").toLowerCase())}</span></div>`;
