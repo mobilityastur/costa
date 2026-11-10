@@ -156,7 +156,7 @@ function graficoOleaje(mar) {
     const alto = base - y(h), col = ["#5EE0D6", "#F2B33D", "#F07167"][nivelOla(h)];
     barras += `<rect x="${(i * ancho + 1.5).toFixed(1)}" y="${y(h).toFixed(1)}" width="${(ancho - 3).toFixed(1)}" height="${alto.toFixed(1)}" rx="2" fill="${col}"><title>${num(h)} m</title></rect>`;
     if (i % 2 === 0 && dir[i] != null) {
-      flechas += `<g transform="translate(${(i * ancho + ancho).toFixed(1)} 112) rotate(${(dir[i] + 180) % 360})"><path d="M0 -6 L0 6 M-3 3 L0 6 L3 3"></path></g>`;
+      flechas += `<g transform="translate(${(i * ancho + ancho).toFixed(1)} 112) rotate(${dir[i] % 360})"><path d="M0 -6 L0 6 M-3 3 L0 6 L3 3"></path></g>`;
     }
   });
   let prev = null;
@@ -286,7 +286,7 @@ function vistaLugar(id) {
   }
   if (l.mar) {
     html += `<section class="tarjeta"><div class="cab"><h2>Oleaje · 3 días</h2><small>altura (m)</small></div>
-      ${graficoOleaje(l.mar)}<span class="nota">${esc(resumenOleaje(l.mar))} Ámbar desde 1 m, coral desde 2,5 m. Las flechas indican hacia dónde va la ola.</span></section>`;
+      ${graficoOleaje(l.mar)}<span class="nota">${esc(resumenOleaje(l.mar))} Ámbar desde 1 m, coral desde 2,5 m. Las flechas indican hacia dónde va la ola (arriba es el norte).</span></section>`;
   }
   const ae = l.aemet;
   html += `<section class="tarjeta" style="background:var(--tarjeta)"><div class="cab"><h2>AEMET · playa</h2>${ae?.nombre ? `<small>${esc(ae.nombre)}</small>` : ""}</div>`;
