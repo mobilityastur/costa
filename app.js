@@ -148,7 +148,8 @@ function graficoOleaje(mar) {
     escala += `<line x1="0" y1="${yy}" x2="${A}" y2="${yy}" stroke="#2A4357" stroke-dasharray="${Math.abs(v - Math.round(v)) < 1e-9 ? "4 3" : "1 4"}"></line>
       <text x="${A + 5}" y="${(Number(yy) + 3.5).toFixed(1)}" font-size="10.5" fill="#9FB3C1">${num(v, step < 1 ? 1 : 0)}</text>`;
   }
-  escala += `<text x="${A + 5}" y="${base + 3.5}" font-size="10.5" fill="#9FB3C1">0</text>`;
+  escala += `<text x="${A + 5}" y="${base + 3.5}" font-size="10.5" fill="#9FB3C1">0</text>
+    <text x="2" y="${(y(1) - 4).toFixed(1)}" font-size="10" fill="#9FB3C1">1 m</text>`;
   let barras = "", flechas = "", dias = "", separadores = "";
   alt.forEach((h, i) => {
     if (h == null) return;
