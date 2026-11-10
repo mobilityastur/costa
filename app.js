@@ -135,33 +135,40 @@ function resumenMarea(est) {
 // ---------- oleaje ----------
 function graficoOleaje(mar) {
   const alt = mar.wave_height || [], dir = mar.wave_direction || [], paso = mar.paso || 3;
-  const t0 = new Date(mar.t0).getTime(), W = 330, base = 92, n = alt.length;
+  const t0 = new Date(mar.t0).getTime(), W = 330, A = W - 30, base = 96, H = 82, n = alt.length;
   if (!n) return '<p class="nota">Sin previsión de oleaje.</p>';
-  const max = Math.max(1.5, ...alt.filter((v) => v != null)) * 1.1;
-  const ancho = W / n;
+  // escala de la derecha: marcas cada 0,5 m (cada 1 m si el mar pasa de 3 m)
+  const maxv = Math.max(1, ...alt.filter((v) => v != null));
+  const step = maxv > 3 ? 1 : 0.5, tope = Math.ceil((maxv * 1.05) / step) * step;
+  const y = (h) => base - (h / tope) * H;
+  const ancho = A / n;
+  let escala = "";
+  for (let v = step; v <= tope + 1e-9; v += step) {
+    const yy = y(v).toFixed(1);
+    escala += `<line x1="0" y1="${yy}" x2="${A}" y2="${yy}" stroke="#2A4357" stroke-dasharray="${Math.abs(v - Math.round(v)) < 1e-9 ? "4 3" : "1 4"}"></line>
+      <text x="${A + 5}" y="${(Number(yy) + 3.5).toFixed(1)}" font-size="10.5" fill="#9FB3C1">${num(v, step < 1 ? 1 : 0)}</text>`;
+  }
+  escala += `<text x="${A + 5}" y="${base + 3.5}" font-size="10.5" fill="#9FB3C1">0</text>`;
   let barras = "", flechas = "", dias = "", separadores = "";
   alt.forEach((h, i) => {
     if (h == null) return;
-    const alto = (h / max) * 74, col = ["#5EE0D6", "#F2B33D", "#F07167"][nivelOla(h)];
-    barras += `<rect x="${(i * ancho + 1.5).toFixed(1)}" y="${(base - alto).toFixed(1)}" width="${(ancho - 3).toFixed(1)}" height="${alto.toFixed(1)}" rx="2" fill="${col}"></rect>`;
+    const alto = base - y(h), col = ["#5EE0D6", "#F2B33D", "#F07167"][nivelOla(h)];
+    barras += `<rect x="${(i * ancho + 1.5).toFixed(1)}" y="${y(h).toFixed(1)}" width="${(ancho - 3).toFixed(1)}" height="${alto.toFixed(1)}" rx="2" fill="${col}"><title>${num(h)} m</title></rect>`;
     if (i % 2 === 0 && dir[i] != null) {
-      flechas += `<g transform="translate(${(i * ancho + ancho).toFixed(1)} 108) rotate(${(dir[i] + 180) % 360})"><path d="M0 -6 L0 6 M-3 3 L0 6 L3 3"></path></g>`;
+      flechas += `<g transform="translate(${(i * ancho + ancho).toFixed(1)} 112) rotate(${(dir[i] + 180) % 360})"><path d="M0 -6 L0 6 M-3 3 L0 6 L3 3"></path></g>`;
     }
   });
   let prev = null;
   for (let i = 0; i < n; i++) {
     const d = new Date(t0 + i * paso * 3600000), k = diaClave(d);
     if (k !== prev) {
-      if (prev) separadores += `<line x1="${(i * ancho).toFixed(1)}" y1="14" x2="${(i * ancho).toFixed(1)}" y2="${base + 4}" stroke="#2A4357"></line>`;
-      dias += `<text x="${(i * ancho + 3).toFixed(1)}" y="136" font-size="12" fill="#CFE0EA">${esc(nombreDia(d, true))}</text>`;
+      if (prev) separadores += `<line x1="${(i * ancho).toFixed(1)}" y1="${base - H}" x2="${(i * ancho).toFixed(1)}" y2="${base + 4}" stroke="#2A4357"></line>`;
+      dias += `<text x="${(i * ancho + 3).toFixed(1)}" y="140" font-size="12" fill="#CFE0EA">${esc(nombreDia(d, true))}</text>`;
       prev = k;
     }
   }
-  const y1 = base - (1 / max) * 74;
-  return `<svg class="grafico" viewBox="0 0 ${W} 142" role="img" aria-label="Altura de ola cada ${paso} horas durante 3 días, entre ${num(Math.min(...alt))} y ${num(Math.max(...alt))} metros" font-family="Barlow, sans-serif">
-    <line x1="0" y1="${base}" x2="${W}" y2="${base}" stroke="#2A4357"></line>
-    <line x1="0" y1="${y1.toFixed(1)}" x2="${W}" y2="${y1.toFixed(1)}" stroke="#2A4357" stroke-dasharray="2 4"></line>
-    <text x="2" y="${(y1 - 4).toFixed(1)}" font-size="10" fill="#9FB3C1">1 m</text>
+  return `<svg class="grafico" viewBox="0 0 ${W} 146" role="img" aria-label="Altura de ola cada ${paso} horas durante 3 días, entre ${num(Math.min(...alt))} y ${num(Math.max(...alt))} metros" font-family="Barlow, sans-serif">
+    ${escala}<line x1="0" y1="${base}" x2="${A}" y2="${base}" stroke="#3A566B"></line>
     ${separadores}${barras}
     <g stroke="#CFE0EA" stroke-width="1.6" fill="none" stroke-linecap="round">${flechas}</g>${dias}</svg>`;
 }
