@@ -33,6 +33,7 @@ URL_AEMET_AVISOS = "https://opendata.aemet.es/opendata/api/avisos_cap/ultimoelab
 HORAS = 72  # 3 días de previsión
 PASO_GRAFICO = 3  # el gráfico de oleaje va cada 3 h
 REFRESCO_AEMET_PLAYAS = timedelta(hours=3)
+MAX_PLAYAS_POR_PASADA = 6
 
 
 # ---------- utilidades ----------
@@ -48,6 +49,8 @@ def descargar(url, cabeceras=None, intentos=3, espera=4):
         except Exception as e:  # noqa: BLE001
             ultimo = e
             print(f"  aviso: {url[:90]} intento {i + 1}: {e}", file=sys.stderr)
+            if getattr(e, "code", None) == 429:
+                break  # límite de peticiones: reintentar solo lo empeora
             time.sleep(espera * (i + 1))
     raise RuntimeError(f"no se pudo descargar {url[:90]}: {ultimo}")
 
@@ -316,22 +319,23 @@ def main():
         # la predicción de playas cambia poco: se pide cada 3 horas y si no se reutiliza
         playas_prev = cache_prev.get("playas") or {}
         def playas():
-            res = {}
-            for l in lugares:
-                c = l.get("aemet")
-                if not c:
-                    continue
+            # La clave de AEMET se comparte con la app de carreteras: se renuevan como mucho
+            # MAX_PLAYAS_POR_PASADA playas en cada ejecución (las más antiguas primero), espaciadas.
+            res = {c: p for c, p in playas_prev.items()}
+            codigos = [l["aemet"] for l in lugares if l.get("aemet")]
+            def edad(c):
                 p = playas_prev.get(c)
-                if p and fecha(p.get("descargado")) and AHORA - fecha(p["descargado"]) < REFRESCO_AEMET_PLAYAS:
-                    res[c] = p
-                    continue
+                return fecha(p.get("descargado")) if p and p.get("descargado") else datetime.min.replace(tzinfo=timezone.utc)
+            pendientes = [c for c in sorted(codigos, key=edad) if AHORA - edad(c) >= REFRESCO_AEMET_PLAYAS]
+            for c in pendientes[:MAX_PLAYAS_POR_PASADA]:
                 try:
-                    res[c] = leer_playa(c, clave) or p
+                    res[c] = leer_playa(c, clave) or res.get(c)
                 except Exception as e:  # noqa: BLE001
                     print(f"  playa {c}: {e}", file=sys.stderr)
-                    res[c] = p
-                time.sleep(1.2)  # AEMET limita peticiones por minuto
-            return res
+                    if "429" in str(e):
+                        break
+                time.sleep(3)
+            return {c: res[c] for c in codigos if res.get(c)}
         fuente("playas", playas)
     else:
         for n in ("avisos", "playas"):
