@@ -149,6 +149,22 @@
       ]
     },
     {
+      "id": "frejulfe",
+      "nombre": "Playa de Frejulfe",
+      "tipo": "playa",
+      "municipio": "Navia",
+      "zona": "occidental",
+      "lat": 43.5592,
+      "lon": -6.6745,
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/parque-historico-del-navia/navia/navia/playa-de-frejulfe-hd/98/",
+          "nombre": "Playa de Frejulfe",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
+    },
+    {
       "id": "otur",
       "nombre": "Playa de Otur",
       "tipo": "playa",
