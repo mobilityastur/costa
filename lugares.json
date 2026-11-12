@@ -308,7 +308,14 @@
       "zona": "central",
       "lat": 43.5917,
       "lon": -5.93,
-      "marea": "7"
+      "marea": "7",
+      "webcams": [
+        {
+          "url": "https://www.webcamsdeasturias.com/asturias/comarca-de-aviles/aviles/aviles/ria-de-aviles-hd/6/",
+          "nombre": "Ría de Avilés",
+          "fuente": "Webcams de Asturias"
+        }
+      ]
     },
     {
       "id": "luanco",
